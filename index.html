@@ -3,47 +3,73 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta property="og:type" content="website" />
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-          'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-TFD9TXR');</script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TFD9TXR');
+    </script>
     <link rel="apple-touch-icon" href="https://mrepol742.github.io/favicon.png">
-    <link rel="icon" type="image/png" href= 'images2/icon.png'>
+    <link rel="icon" type="image/png" href="images2/icon.png">
     <title>Happy Valentines Day! Babiiii!</title>
     <link rel="stylesheet" href="index.css">
-
-<meta name="viewport" content="width=1050, user-scalable=no" />
-<script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
-<script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+    <meta name="viewport" content="width=1050, user-scalable=no" />
+    <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+    <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+    <style>
+        .flipbook-viewport {
+            display: none; /* Hide flipbook by default */
+        }
+    </style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFD9TXR" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <div class="flipbook-viewport">
-        <div class="container">
-            <div class="flipbook">
-                <div class="page"
-                    style="background-image:url(images2/intro.png);"></div>
-                <div class="double"
-                    style="background-image:url(images2/intro1.gif);"></div>
-                <div class="double"
-                    style="background-image:url(images2/MESSAGE.png);"></div>
-                <div class="double"
-                    style="background-image:url(images2/image4.png);"></div>
-                <div class="double"
-                    style="background-image:url(images2/image5.png);"></div>
-                <div class="page"
-                    style="background-image:url(images2/outro.png);"></div>
+    
+            <div class="code-entry centered" style="max-width: 400px; margin: 0 auto; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+              <h2 class="text-center">Enter the code to view the hidden msg:</h2>
+              <form class="text-center" action="#" onsubmit="return verifyCode()">
+                  <input type="text" id="codeInput" class="form-control form-control-lg" autocomplete="off" placeholder="Enter code (8 characters)" required maxlength="8">
+                  &nbsp; <button type="submit" class="btn btn-primary mt-3">Submit</button>
+              </form>
+          </div>
+            <div class="flipbook-viewport">
+                <div class="container">
+                    <div class="flipbook">
+                        <div class="page"
+                            style="background-image:url(images2/intro.png);"></div>
+                        <div class="double"
+                            style="background-image:url(images2/intro1.gif);"></div>
+                        <div class="double"
+                            style="background-image:url(images2/MESSAGE.png);"></div>
+                        <div class="double"
+                            style="background-image:url(images2/image4.png);"></div>
+                        <div class="double"
+                            style="background-image:url(images2/image5.png);"></div>
+                        <div class="page"
+                            style="background-image:url(images2/outro.png);"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
     <script src="index.js"></script>
-
+    <script>
+        // Function to verify the entered code
+        function verifyCode() {
+            var enteredCode = document.getElementById("codeInput").value;
+            if (enteredCode === "07012024") {
+                document.querySelector('.code-entry').style.display = 'none'; // Hide code entry
+                document.querySelector('.flipbook-viewport').style.display = 'block'; // Show flipbook
+                return false; // Prevent form submission
+            } else {
+                alert("Incorrect code. Please try again.");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
 </body>
-
 </html>
